@@ -41,7 +41,7 @@ jobs:
            echo "Terraform build started.."
            
       - name: Create a Directory
-        run: mkdir GITHUB_PATH/terraform
+        run: mkdir $GITHUB_PATH/terraform
         
       - name: Move files to base directory
         run : |
