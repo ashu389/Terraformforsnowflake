@@ -59,8 +59,8 @@ jobs:
            echo "Account:$TF_VAR_account"
            echo "Password:$TF_VAR_password"
         env:
-          TF_VAR_account:${{ var.Account }}
-          TF_VAR_password:${{ var.Password }}
+          TF_VAR_account:${{ vars.Account }}
+          TF_VAR_password:${{ vars.Password }}
           
       - name: Terraform plan
         run: |
