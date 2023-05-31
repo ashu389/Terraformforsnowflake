@@ -56,8 +56,8 @@ jobs:
       - name: export variables as system variables
         run: |
            echo "=============settingup env variables============================================"
-           export TF_VAR_account= ${{ secret.Account }}
-           export TF_VAR_password= ${{ secret.Password }}
+           export TF_VAR_account=${{ secret.Account }}
+           export TF_VAR_password=${{ secret.Password }}
       - name: Terraform plan
         run: |
             cd $GITHUB_WORKSPACE
