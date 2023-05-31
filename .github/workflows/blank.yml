@@ -45,19 +45,16 @@ jobs:
           echo "=====================List all the files of main folder============================"
           cd $GITHUB_WORKSPACE
           ls
-          #### Copy file to src directory and correct file permissions
-          echo "list all the files in $GITHUB_WORKSPACE" && ls
           sudo chmod -R 777 $GITHUB_WORKSPACE  ###Modifying permissions to make the dir executable
           cd $GITHUB_WORKSPACE
-          echo "list all the files in Deployments Directory" && ls
-      
+    
       - name: Terraform init
         run: |
-            sudo cd $GITHUB_WORKSPACE
+            cd $GITHUB_WORKSPACE
             terraform init
             
       - name: Terraform plan
         run: |
-            sudo cd $GITHUB_WORKSPACE
+            cd $GITHUB_WORKSPACE
             terraform plan
         
