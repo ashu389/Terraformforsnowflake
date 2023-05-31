@@ -39,33 +39,25 @@ jobs:
            terraform --version 
            fi
            echo "Terraform build started.."
-           
-      - name: Create a Directory
-        run: mkdir $GITHUB_PATH/terraform
-        
+                 
       - name: Move files to base directory
         run : |
           echo "=====================List all the files of main folder============================"
           cd $GITHUB_WORKSPACE
           ls
           #### Copy file to src directory and correct file permissions
-          echo "=================== COPY src Files to the Build environment ======================"
-          sudo rm -rf GITHUB_PATH/terraform
-          sudo mkdir  GITHUB_PATH/terraform 
-          sudo cp -v -r * GITHUB_PATH/terraform  
-          ### copy all the files to the build environment
-          echo "list all the files in GITHUB_PATH/terraform" && ls
-          sudo chmod -R 777 GITHUB_PATH/terraform  ###Modifying permissions to make the dir executable
-          cdGITHUB_PATH/terraform
+          echo "list all the files in $GITHUB_WORKSPACE" && ls
+          sudo chmod -R 777 $GITHUB_WORKSPACE  ###Modifying permissions to make the dir executable
+          cd $GITHUB_WORKSPACE
           echo "list all the files in Deployments Directory" && ls
       
       - name: Terraform init
         run: |
-            sudo cd  GITHUB_PATH/terraform
+            sudo cd $GITHUB_WORKSPACE
             terraform init
             
       - name: Terraform plan
         run: |
-            sudo cd  GITHUB_PATH/terraform
+            sudo cd $GITHUB_WORKSPACE
             terraform plan
         
