@@ -43,7 +43,7 @@ jobs:
       - name: Create a Directory
         run: mkdir terraform
         
-      - name: Move fiels to base directory
+      - name: Move files to base directory
         run : |
           echo "=====================List all the files of main folder============================"
           cd $GITHUB_WORKSPACE
@@ -58,9 +58,14 @@ jobs:
           sudo chmod -R 777 $GITHUB_WORKSPACE/terraform  ###Modifying permissions to make the dir executable
           cd $GITHUB_WORKSPACE/terraform
           echo "list all the files in Deployments Directory" && ls
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      
+      - name: Terraform init
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+            sudo cd  $GITHUB_WORKSPACE/terraform
+            terraform init
+            
+      - name: Terraform plan
+        run: |
+            sudo cd  $GITHUB_WORKSPACE/terraform
+            terraform plan
+        
