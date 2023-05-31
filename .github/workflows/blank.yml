@@ -35,14 +35,14 @@ jobs:
             
       - name: Terraform validate
         run: 
-            export TF_VAR_account=${{ vars.Account }}
-            export TF_VAR_password=${{ vars.Password }}
+            export TF_VAR_account=${{ secrets.Account }}
+            export TF_VAR_password=${{ secrets.Password }}
             terraform validate
             
       - name: Terraform plan
         run: |
             cd $GITHUB_WORKSPACE
-            export TF_VAR_account=${{ vars.Account }}
-            export TF_VAR_password=${{ vars.Password }}
+            export TF_VAR_account=${{ secrets.Account }}
+            export TF_VAR_password=${{ secrets.Password }}
             terraform plan
         
