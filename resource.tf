@@ -1,6 +1,7 @@
 locals {
 #  config = csvdecode(file("../configs/config.csv")) # not being used now
-  jsonconfig = jsondecode(file("../configs/Definition.json"))
+#  jsonconfig = jsondecode(file("../configs/Definition.json"))
+  jsonconfig = jsondecode(file("configs/Definition.json"))
 }
 
 resource "snowflake_database" "SnowDB" {
