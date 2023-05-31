@@ -54,8 +54,8 @@ jobs:
             terraform init
       - name: export variables as system variables
         run: |
-           export TF_VAR_account= ${{ var.Account }}
-           export TF_VAR_password= ${{ var.Password }}
+           export TF_VAR_account= ${{ secrets.Account }}
+           export TF_VAR_password= ${{ secrets.Password }}
       - name: Terraform plan
         run: |
             cd $GITHUB_WORKSPACE
