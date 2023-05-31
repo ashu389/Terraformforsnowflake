@@ -1,0 +1,53 @@
+{
+
+"databases": [
+    {
+        "name": "TestDB1",
+        "schema_name": "Testschema1",
+        "table_name": "TestTable1",
+        "retention_time" : 30,
+        "is_managed" : false,
+        "is_transient" : false,        
+        "columns": [
+        {
+            "name": "c1",
+            "type": "VARCHAR",
+            "comment": "First column",
+            "nullable": true
+        },
+        {
+            "name": "c2",
+            "type": "INTEGER",
+            "comment": "Second column",
+            "nullable": false
+        }
+        ]
+    },
+    {
+        "name": "TestDB2",
+        "schema_name": "Testschema2",
+        "table_name": "TestTable2",
+        "retention_time" : 30,
+        "is_managed" : false,
+        "is_transient" : false,        
+        "columns": [
+        {
+            "name": "c1",
+            "type": "VARCHAR",
+            "comment": "First column",
+            "nullable": true
+        },
+        {
+            "name": "c2",
+            "type": "INTEGER",
+            "comment": "Second column",
+            "nullable": false
+        }
+        ]
+    }
+    ]
+}
+
+
+
+  
