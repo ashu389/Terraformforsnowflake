@@ -14,7 +14,7 @@ jobs:
            if ! terraform -v terraform >/dev/null 2>&1; then
            wget https://releases.hashicorp.com/terraform/1.4.6/terraform_1.4.6_linux_amd64.zip
            #wget https://releases.hashicorp.com/terraform/1.0.11/terraform_1.0.11_linux_amd64.zip
-           unzip terraform_1.0.11_linux_amd64.zip
+           unzip terraform_1.4.6_linux_amd64.zip
            sudo mv terraform /usr/local/bin/
            else echo "Terraform is already installed"
            terraform --version 
